@@ -14,6 +14,7 @@ export default class StockTable extends React.Component {
                 rows.push(<StockBar stock={element} key={element['1. symbol']} />)
             });
         }
+
         return (
             <table border='1px'>
                 {rows}
