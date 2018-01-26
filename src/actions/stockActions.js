@@ -7,8 +7,6 @@ const batchStockFetched = (batchStockes) => {
 }
 
 function fetchBatchStocksAsync() {
-console.log("insideAction")
-
     return dispatch => {
         return fetch(`https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=MSFT,FB,AAPL&apikey=demo`)
             .then(response => response.json())
