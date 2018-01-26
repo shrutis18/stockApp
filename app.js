@@ -1,21 +1,28 @@
 import ReactDOM from 'react-dom';
-import StockScreen from './src/components/stockScreen';
 import React from 'react';
 import { createStore } from 'redux';
 import { connect, Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { reducer } from './src/reducer/stockReducer';
-import { mapStateToProps, mapDispatchToProps } from './src/containers/stockTableContainer';
 import { applyMiddleware } from 'redux';
-import StockTable from './src/components/stockTable';
+import {rootReducer} from './combineReducers.js';
+import {ConnectedRouter} from 'react-router-redux'
+import {getRoutes} from './src/routes.js';
+import {routerMiddleware, routerReducer as routing} from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 
+const history = createHistory()
 
-const store = createStore(reducer, applyMiddleware(thunk))
-const StockTableWithStore = connect(mapStateToProps, mapDispatchToProps)(StockTable)
+const middleware = routerMiddleware(history)
+
+const store = createStore(rootReducer, applyMiddleware(thunk,middleware))
 
 ReactDOM.render(
   <Provider store={store}>
-    <StockTableWithStore />
+     <div>
+      <ConnectedRouter history = {history}>
+       {getRoutes(store)}
+      </ConnectedRouter>
+       </div>
   </Provider>,
   document.getElementById('root')
 );

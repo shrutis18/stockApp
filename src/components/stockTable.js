@@ -8,6 +8,7 @@ export default class StockTable extends React.Component {
     }
 
     render() {
+    console.log("inside this");
         const rows = [];
         if (this.props.batchStocks) {
             this.props.batchStocks.forEach(element => {
