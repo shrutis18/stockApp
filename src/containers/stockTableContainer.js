@@ -3,7 +3,7 @@ import StockTable from '../components/stockTable'
 import {connect} from 'react-redux'
 
 export const mapStateToProps = (state) => {
-    return { batchStocks: state.batchStocks }
+    return { batchStocks: state.reducer.batchStocks }
 }
 export const mapDispatchToProps = (dispatch) => {
     return {

@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import {
     BrowserRouter as Router,
     Route,
-} from 'react-router'
+} from 'react-router-dom'
 import StockTable from './containers/stockTableContainer';
 
 export const getRoutes = (store) => {
+ return(
 
     <Router>
         <Route exact path ='/' component ={StockTable}/>
     </Router>
+    )
   }
