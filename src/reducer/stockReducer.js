@@ -8,6 +8,11 @@ export const reducer = (state = initialState, action = {}) => {
                 batchStocks: action.batchStockes
             })
         }
+        case constants.FETCH_BATCH_STOCKS_DETAILS: {
+            return Object.assign({}, state, {
+                batchStockDetail: action.batchStockeDetail
+            })
+        }
         case constants.BATCH_STOCKS_ERROR: {
             return Object.assign({}, state, {
                 error
