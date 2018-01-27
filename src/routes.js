@@ -5,12 +5,15 @@ import {
     Route,
 } from 'react-router-dom'
 import StockTable from './containers/stockTableContainer';
+import StockDetail from './containers/stockDetailContainer';
 
 export const getRoutes = (store) => {
  return(
-
-    <Router>
+     <Router>
+    <div>
         <Route exact path ='/' component ={StockTable}/>
+        <Route  path ='/details' component ={StockDetail}/>
+    </div>
     </Router>
     )
   }
