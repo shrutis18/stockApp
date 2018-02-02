@@ -8,9 +8,9 @@ import {rootReducer} from './combineReducers.js';
 import {ConnectedRouter} from 'react-router-redux'
 import {getRoutes} from './src/routes.js';
 import {routerMiddleware, routerReducer as routing} from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
+import createHashHistory from 'history/createHashHistory'
 
-const history = createHistory()
+const history = createHashHistory()
 
 const middleware = routerMiddleware(history)
 

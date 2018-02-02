@@ -1,7 +1,7 @@
 import { push } from 'react-router-redux';
 
 const navigateToDetails = (symbol) => {
-    return push(`/#/details/${symbol}`)
+    return push(`/details/${symbol}`)
 }
 
 const batchStockFetched = (batchStockes) => {
@@ -27,7 +27,6 @@ function fetchBatchStocksAsync() {
 }
 
 function fetchBatchStockDetailAsync(symbol) {
-    console.log("inside action", symbol);
     return dispatch => {
         return fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=2FZIVBF4TZA5XLXB`)
             .then(response => response.json())
