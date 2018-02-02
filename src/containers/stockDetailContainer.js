@@ -1,6 +1,7 @@
 import { stockActions } from '../actions/stockActions'
 import StockDetail from '../components/stockDetail'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 export const mapStateToProps = (state) => {
     return { batchStockDetail: state.reducer.batchStockDetail }
@@ -13,7 +14,7 @@ export const mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(StockDetail)
+)(StockDetail))

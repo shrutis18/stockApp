@@ -1,7 +1,7 @@
 import { push } from 'react-router-redux';
 
 const navigateToDetails = (symbol) => {
-    return push(`/#/details/${symbol}`)
+    return push(`/details/${symbol}`)
 }
 
 const batchStockFetched = (batchStockes) => {

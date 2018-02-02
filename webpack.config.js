@@ -3,7 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './app.js',
+  entry: './src/app.js',
   devtool: debug ? "inline-sourcemap" : false,
   output: { path: __dirname, filename: 'bundle.js'},
   module: {
